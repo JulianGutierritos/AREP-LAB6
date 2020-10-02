@@ -1,0 +1,73 @@
+h1 {
+    text-align: center;
+    color: navy;
+    
+  }
+  
+  h2 {
+    margin-left: 47%;
+    color: navy;
+  }
+  
+  input[type=text], select {
+    margin-top: 2%;
+    margin-left: 40%;
+    width: 20%;
+    padding: 12px 12px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    
+  }
+    
+  input[type=password], select {
+    margin-left: 40%;
+    width: 20%;
+    padding: 12px 12px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .button {
+    margin-left: 46%;
+    margin-top: 2%;
+    background-color: navy; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  .table {
+    width:800px;
+    border-spacing:5px;
+    margin-left: 20%;
+    margin-top: 0%;
+  }
+
+  .imagen {
+    margin-left: 80%;
+    margin-top: -15%;
+  }
+
+  .logOut {
+    margin-left: 80%;
+    background-color: navy; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  .header {
+    margin-top: 10%;
+  }

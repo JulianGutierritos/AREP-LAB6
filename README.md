@@ -98,7 +98,7 @@ Vale recalcar que los subprogramas ya cuentan con archivos de documentación ubi
 
 ## Desplegando en AWS ## 
 
-** Vídeo de prueba **
+**Vídeo de prueba**
 
 [![Video](images/video.PNG)](https://drive.google.com/file/d/1nDFKz2jifPMnyTj6E1qS6YC5S4IMwxaI/view?usp=sharing)
 
@@ -106,7 +106,7 @@ Vale recalcar que los subprogramas ya cuentan con archivos de documentación ubi
 https://drive.google.com/file/d/1nDFKz2jifPMnyTj6E1qS6YC5S4IMwxaI/view?usp=sharing
 ```
 
-** Paso a paso para ejecutar en AWS **
+**Paso a paso para ejecutar en AWS**
 
 Para desplegar este programa en AWS, utilizando una máquina distinta para cada subprograma, se deben seguir los siguientes pasos: 
 

@@ -96,6 +96,19 @@ Si desea generar una nueva documentación del programa, debe ejecutar la siguien
 
 Vale recalcar que los subprogramas ya cuentan con archivos de documentación ubicados en la carpeta "Documentacion" de cada uno.
 
+## Seguridad Escalable ## 
+
+Este programa tiene la característica de ser altamente escalable, ya que permite la creación y adhesión de nueas funciones distribuidas en distintos equipos. Por ejemplo, en el siguiente diagrama vemos la aparición de una nueva app en el programa: 
+
+![](images/nuevaApp.PNG)
+
+Esta nueva app, al únicamente poder ser accedida mediante el subprograma de "sesionApp", nos garantiza que va a estar protegida, ya que para poder ejecutarla el usuario sí o sí necesitará estar logueado en el sistema. 
+
+Lógicamente, esta nueva App requirirá una nueva llave, y así mismo, deberá generar un nuevo certificado. Este nuevo certificado, deberá ser trasladado al "MyTrustStore" de la app de sesión, así como la app de sesión tendrá que trasladar su certificado al "MyTrustStore" de la nueva app, para así garantizar una comunicación simétrica segura. 
+
+Como vemos en el diagrama, la nueva app no se comunicaría con nuestra app de la hora, es por esto que no sería necesario intercambiar certificados entre ellas.
+
+
 ## Desplegando en AWS ## 
 
 **Vídeo de prueba**

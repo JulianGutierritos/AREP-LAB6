@@ -2,6 +2,8 @@ package edu.eci.arep;
 
 import spark.Service;
 import spark.staticfiles.StaticFilesConfiguration;
+import java.io.FileReader;
+import java.util.Properties;
 
 import java.time.LocalDateTime;
 
@@ -18,8 +20,13 @@ public class Main {
 	*inicializa spark 
 	*/
     public static void main(String... args){
+		Properties login = new Properties();
+		try (FileReader in = new FileReader("src/main/resources/login.properties")) {
+			login.load(in);
+		} catch (Exception e) {}
+		String keystore = login.getProperty("ks");
 		Service service = Service.ignite();
-		service.secure("keystore/ecikeystore.p12", "123456", null, null);
+		service.secure("keystore/ecikeystore.p12", keystore, null, null);
 		service.port(getPort());
 		service.before("/usuario.html" , (req , res) ->{
 			if (req.session().attribute("usuario") == null){

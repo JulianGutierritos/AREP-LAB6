@@ -1,6 +1,5 @@
 package edu.eci.arep;
 
-
 import java.io.*;
 import java.net.*;
 import java.security.KeyManagementException;
@@ -8,6 +7,7 @@ import java.security.KeyStore;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 import java.security.cert.CertificateException;
+import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.net.ssl.SSLContext;
@@ -31,8 +31,13 @@ public class URLSecureReader {
     public static String readURLS(String urls) {
         String inputLine = "";
         try {
+            Properties login = new Properties();
+		    FileReader in = new FileReader("src/main/resources/login.properties");
+			login.load(in);
+            String truststore = login.getProperty("ts");
+            System.out.println(truststore);
             File trustStoreFile = new File("keystore/myTrustStore");
-            char[] trustStorePassword = "123456".toCharArray();
+            char[] trustStorePassword = truststore.toCharArray();
             KeyStore trustStore = KeyStore.getInstance(KeyStore.getDefaultType());
             trustStore.load(new FileInputStream(trustStoreFile), trustStorePassword);
             TrustManagerFactory tmf = TrustManagerFactory

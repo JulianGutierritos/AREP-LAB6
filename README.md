@@ -100,10 +100,10 @@ Vale recalcar que los subprogramas ya cuentan con archivos de documentación ubi
 
 **Vídeo de prueba**
 
-[![Video](images/video.PNG)](https://drive.google.com/file/d/1nDFKz2jifPMnyTj6E1qS6YC5S4IMwxaI/view?usp=sharing)
+[![Video](images/video.PNG)](https://youtu.be/0aPLbuNE5dQ)
 
 ```
-https://drive.google.com/file/d/1nDFKz2jifPMnyTj6E1qS6YC5S4IMwxaI/view?usp=sharing
+https://youtu.be/0aPLbuNE5dQ
 ```
 
 **Paso a paso para ejecutar en AWS**

@@ -3,28 +3,39 @@ package edu.eci.arep;
 import spark.Service;
 import spark.staticfiles.StaticFilesConfiguration;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.math.BigInteger;
 import java.security.MessageDigest;
+import java.util.Properties;
 
 import edu.eci.arep.model.Usuario;
 import edu.eci.arep.service.LoginService;
 import edu.eci.arep.service.impl.LoginServiceInMemory;
 
 /**
- * Clase principal cuya tarea es arrancar un servidor HTTP 
+ * Clase principal cuya tarea es arrancar un servidor HTTP
+ * 
  * @author Julián Gutiérrez
  * @version 1.0
  */
 public class Main {
-	
-	
+
 	/**
-	*inicializa spark 
-	*/
-    public static void main(String... args){
+	 * inicializa spark
+	 * 
+	 * @throws FileNotFoundException
+	 */
+	public static void main(String... args) {
 		LoginService lserv = new LoginServiceInMemory();
 		Service service = Service.ignite();
-		service.secure("keystore/ecikeystore.p12", "123456", "keystore/myTrustStore", "123456");
+		Properties login = new Properties();
+		try (FileReader in = new FileReader("src/main/resources/login.properties")) {
+			login.load(in);
+		} catch (Exception e) { }
+		String keystore = login.getProperty("ks");
+		String truststore = login.getProperty("ts");
+		service.secure("keystore/ecikeystore.p12", keystore, "keystore/myTrustStore", truststore);
 		service.port(getPort());
 		service.before("/usuario.html" , (req , res) ->{
 			if (req.session().attribute("usuario") == null){
